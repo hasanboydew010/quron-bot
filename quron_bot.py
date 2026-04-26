@@ -20,10 +20,8 @@ def start_health_server():
     port = int(os.environ.get("PORT", 10000))
     HTTPServer(("0.0.0.0", port), HealthHandler).serve_forever()
 
-TOKEN = os.environ.get("8753022712:AAHkn99MGubmeYib-QBPT6mW36ZhsqCO8ig")
-GROQ_KEY = os.environ.get("gsk_nBVu6SjuCPtav3yyhJ4FWGdyb3FYy8e8I7Bsz5bmAaM24121HYC19n2sXoLh")
-
-groq_client = Groq(api_key=GROQ_KEY)
+TOKEN = os.environ.get("TOKEN")
+GROQ_KEY = os.environ.get("GROQ_KEY")
 
 with open("quran.json", "r", encoding="utf-8") as f:
     QURAN = json.load(f)
